@@ -1,0 +1,33 @@
+$colorText: blue;
+$h2fontSize: 30px;
+@mixin box($width,$color) {
+    width: $width;
+    height: $color;
+    background-color: lemonchiffon;
+}
+
+@mixin box2 {
+    width: 400px;
+    height: 100px;
+    background-color: rgb(97, 32, 88);
+}
+
+body{
+    .wrapper { max-width: 250px;  background-color: lightblue;
+        h1 {color: $colorText; }
+        h2 {color: blue;
+        font-size: $h2fontSize;}
+        a {text-decoration: none;
+          &:hover{color:brown;}
+          }
+      }
+      .sampleClass{
+        &__block{color: $colorText} 
+      }
+      .box{
+          @include box(100px,blue);
+      }
+      .box2{
+        @include box2();
+      }
+}
